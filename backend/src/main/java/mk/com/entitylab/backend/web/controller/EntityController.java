@@ -4,7 +4,6 @@ import mk.com.entitylab.backend.model.domain.EntityRequest;
 import mk.com.entitylab.backend.service.domain.EntityGeneratorService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -18,7 +17,7 @@ public class EntityController {
         this.entityGeneratorService = entityGeneratorService;
     }
 
-    @PostMapping("/generate")
+    @PostMapping("/generate-entity")
     public Map<String, String> generate(@RequestBody EntityRequest request) {
         String code = entityGeneratorService.generateEntity(request);
         return Map.of("code", code);

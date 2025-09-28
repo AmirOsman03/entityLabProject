@@ -1,10 +1,12 @@
 package mk.com.entitylab.backend.model.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 public class EntityRequest {
 
     private String name;
