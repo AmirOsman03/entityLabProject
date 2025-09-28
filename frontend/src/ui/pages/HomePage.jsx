@@ -36,18 +36,18 @@ const HomePage = () => {
                     </div>
                     <div className={"flex my-5"}>
                         <motion.button
-                            className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white px-8 py-3 rounded-md cursor-pointer overflow-hidden"
+                            className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-3 rounded-xl font-medium cursor-pointer overflow-hidden relative"
                             whileHover={{
-                                scale: 1.1,
-                                duration: 0.2,
-                                border: "1px solid white"
+                                scale: 1.05,
                             }}
-                            transition={{
-                                duration: 0.3
-                            }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
                             onClick={() => navigate("/generate-entity")}
                         >
-                            Try it out!
+                            {/* Shimmer effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+
+                            <span className="relative">Try it out!</span>
                         </motion.button>
                     </div>
                 </div>
