@@ -157,7 +157,6 @@ const EntityForm = () => {
                                         <option value="Long">Long</option>
                                         <option value="String">String</option>
                                         <option value="Integer">Integer</option>
-                                        <option value="Boolean">Boolean</option>
                                     </motion.select>
                                 </div>
                             </motion.div>
@@ -198,7 +197,9 @@ const EntityForm = () => {
                                                 <option value="Long">Long</option>
                                                 <option value="Integer">Integer</option>
                                                 <option value="Double">Double</option>
+                                                <option value="Enum">Enum</option>
                                                 <option value="Boolean">Boolean</option>
+                                                <option value="LocalDate">LocalDate</option>
                                                 <option value="LocalDateTime">LocalDateTime</option>
                                             </motion.select>
                                             <motion.button

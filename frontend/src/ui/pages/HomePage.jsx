@@ -1,18 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {useNavigate} from "react-router";
+import BackendArchitecture from "../components/visualArchitecture/BackendArchitecture.jsx";
+import FrontendArchitecture from "../components/visualArchitecture/FrontendArchitecture.jsx";
+import TechCarousel from "../components/carousel/TechCarousel.jsx";
 
 const HomePage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className={"bg-gradient-to-r from-slate-900 to-slate-700 h-screen"}>
+        <div className={"min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800"}>
             {/*Top section*/}
             <div className="flex justify-evenly items-center py-5 ">
                 <div>
                     <h1 className={"text-8xl text-white w-lg font-bold"}>Entity Laboratory</h1>
                     <div className="flex items-center mt-5">
-                        <div className="flex-1 border-t border-gray-400"></div>
+                        <div className="flex-1 border-t border-gray-400"/>
                         <p className="text-white mx-4 text-lg">Designed for developers</p>
                     </div>
                 </div>
@@ -24,31 +27,36 @@ const HomePage = () => {
                     <div className={"flex justify-items-evenly gap-20 mt-5"}>
                         <div>
                             <h2 className={"text-white text-5xl font-light text-center"}>4.9 M</h2>
-                            <p className={"text-gray-500 text-center"}>Active Users</p>
+                            <p className={"text-gray-300 text-center"}>Active Users</p>
                         </div>
                         <div>
                             <h2 className={"text-white text-5xl font-light text-center"}>20K+</h2>
-                            <p className={"text-gray-500 text-center"}>Entities made</p>
+                            <p className={"text-gray-300 text-center"}>Entities made</p>
                         </div>
+                    </div>
+                    <div className={"flex my-5"}>
+                        <motion.button
+                            className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white px-8 py-3 rounded-md cursor-pointer overflow-hidden"
+                            whileHover={{
+                                scale: 1.1,
+                                duration: 0.2,
+                                border: "1px solid white"
+                            }}
+                            transition={{
+                                duration: 0.3
+                            }}
+                            onClick={() => navigate("/generate-entity")}
+                        >
+                            Try it out!
+                        </motion.button>
                     </div>
                 </div>
             </div>
-            <div className={"flex justify-center my-5"}>
-                <motion.button
-                    className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white px-8 py-3 rounded-md cursor-pointer overflow-hidden"
-                    whileHover={{
-                        scale: 1.1,
-                        duration: 0.2,
-                        border: "1px solid white"
-                    }}
-                    transition={{
-                        duration: 0.3
-                    }}
-                    onClick={() => navigate("/generate")}
-                >
-                    Try it out!
-                </motion.button>
+            <div className={"grid grid-cols-2 gap-10 py-5"}>
+                <BackendArchitecture/>
+                <FrontendArchitecture/>
             </div>
+            <TechCarousel/>
         </div>
     );
 };
