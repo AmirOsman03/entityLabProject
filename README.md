@@ -14,4 +14,5 @@ A full-stack application for generating Java entity classes with JPA annotations
 - **Frontend**: React, Material-UI
 - **Backend**: Java, Spring Boot
 - **Code Generation**: Custom logic for generating JPA entity classes
+- **Dockerization**: Frontend and Backend containerized with Docker; Docker Compose used for orchestration
 
