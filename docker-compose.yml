@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    container_name: entityLab-backend
+    ports:
+      - "8000:8080"
+
+  frontend:
+    build: ./frontend
+    container_name: entityLab-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
